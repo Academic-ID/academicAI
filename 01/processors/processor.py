@@ -53,7 +53,7 @@ async def create_folder_table(path, doc_summs, folder_summs, unique_id):
     # Save the result
     writer.close()
 
-async def get_summary(doc_text, user_instruction = ''):
+async def get_summary(doc_text, folder_name, user_instruction = ''):
     """Returns a json object with is_text_present and summary keys. is_text_present is a boolean value indicating whether the text is present and readable. summary is the summary of the document."""
     system_prompt=f"Large language model is a highly-paid expert in folder content summarisation. Large language model will be provided summaries of documents within a directory. Large language model's task is to provide an overall summary of the folder's content. Large language model takes time to read summaries of all documents and consider the meaning of the entire corpus of documents before providing a fully thought out response."
     sum_fn = [
@@ -82,7 +82,7 @@ async def get_summary(doc_text, user_instruction = ''):
     }]
     response = client.chat.completions.create(
                     model=default_model,
-                    messages=[{"role": "system", "content": system_prompt}, {"role": "user", "content": f'{user_instruction}DOCUMENT SUMMARIES:\n\n{doc_text}'}],
+                    messages=[{"role": "system", "content": system_prompt}, {"role": "user", "content": f'{user_instruction}FOLDER NAME: {folder_name}\n\nSUMMARIES OF DOCUMENTS IN FOLDER:\n\n{doc_text}'}],
                     max_tokens=4096,
                     temperature=0.1,
                     tools=sum_fn,
@@ -92,7 +92,7 @@ async def get_summary(doc_text, user_instruction = ''):
     tool_call_args = response_message.tool_calls[0].function.arguments
     return parse_JSON(tool_call_args)
 
-async def get_folder_sum(documents, instructions):    
+async def get_folder_sum(documents, folder_name, instructions):    
     docs_within_folder_sums = []    
 
     for doc in documents:
@@ -111,7 +111,7 @@ async def get_folder_sum(documents, instructions):
         first_100000_tokens = encoding.decode(first_100000_tokens)
 
     # get summary of folder
-    summary_obj = await get_summary(first_100000_tokens, instructions)
+    summary_obj = await get_summary(first_100000_tokens, folder_name, instructions)
     summary_str = summary_obj.get("summary", "")
 
     if not summary_str or len(summary_str) < 10:
@@ -136,11 +136,23 @@ async def process_directory(path, pbar, instructions='', unique_id=''):
     
     doc_summaries, folder_summaries = [], []
 
+    folder_sum = ''
+
     for dirpath, dirnames, filenames in os.walk(path, topdown=True):
-        if f'00. Folder contents {unique_id}.xlsx' in filenames:
+        if f'00. Folder contents {unique_id}.xlsx' in filenames:            
+            excel_file_path = os.path.join(dirpath, f'00. Folder contents {unique_id}.xlsx')
+            df = pd.read_excel(excel_file_path)
+                        
+            file_column = df['File']
+            summary_column = df['Summary']
+                    
+            for file, summary in zip(file_column, summary_column):                
+                doc_summaries.append({"name": file, "summary": summary})
+            
+            folder_sum = await get_folder_sum(doc_summaries, dirpath.split('/')[-1], instructions)
             continue
 
-        filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$')]
+        filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$') and f != f'00. Folder contents {unique_id}.xlsx']
 
         # Process documents in the current directory
         file_tasks = [process_doc({"name": filename, "path": os.path.join(dirpath, filename), "parent": dirpath}, instructions, pbar) for filename in filenames]
@@ -151,17 +163,20 @@ async def process_directory(path, pbar, instructions='', unique_id=''):
         folder_tasks = [process_folder(path, dirpath, dirname, pbar, instructions, unique_id) for dirname in dirnames]
         folder_summaries = await asyncio.gather(*folder_tasks)       
         
-        folder_sum = await get_folder_sum(doc_summaries, instructions)
+        folder_sum = await get_folder_sum(doc_summaries, dirpath.split('/')[-1], instructions)
         await create_folder_table(dirpath, doc_summaries, folder_summaries, unique_id)
         doc_summaries, folder_summaries = [], []
 
     return folder_sum
 
-def count_items(INDEX_PATH):
+def count_items(INDEX_PATH, unique_id=''):
     total_items = 0
     for dirpath, dirnames, filenames in os.walk(INDEX_PATH):
-        # Filter out filenames by accepted filetypes
-        filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes)]
-        total_items += len(filenames)
-        total_items += len(dirnames)
+        if f'00. Folder contents {unique_id}.xlsx' in filenames:
+            continue
+        else:
+            # Filter out filenames by accepted filetypes
+            filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$') and f != f'00. Folder contents {unique_id}.xlsx']
+            total_items += len(filenames)
+            total_items += len(dirnames)
     return total_items
