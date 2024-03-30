@@ -1,11 +1,12 @@
 from openai import OpenAI, AzureOpenAI
-from config import AZURE_OPENAI_KEY, AZURE_OPENAI_BASE_URL, OPEN_AI_KEY, DEFAULT_MODEL, VISION_MODEL
+from config import AZURE_OPENAI_KEY, AZURE_OPENAI_BASE_URL, OPEN_AI_KEY, DEFAULT_MODEL, VISION_MODEL, DALLE_MODEL
 import json
 
 client = None
 
 default_model = DEFAULT_MODEL or 'gpt-4-0125-preview'
 vision_model = VISION_MODEL or 'gpt-4-vision-preview'
+dalle_model = DALLE_MODEL or 'dall-e-3'
 
 if (AZURE_OPENAI_KEY and AZURE_OPENAI_BASE_URL):
     client = AzureOpenAI(
@@ -19,8 +20,6 @@ else:
     
 
 # Below are some general functions that can be used across the tools
-
-
 # Parses the JSON, if an error in JSON parsing, recalls the LLM with the fix json function to get a valid json response.
 def parse_JSON(json_str: str):
     """Parses a JSON string returned from an OpenAI function call and returns the JSON object. If there is an error, it will automatically attempt to fix the JSON object."""

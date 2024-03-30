@@ -12,6 +12,17 @@ which can be used for academic purposes.
 The main interface for each tool is the respective Jupyter notebook. These
 notebooks interface with respective folders that contain feature logic.
 
+These are not designed to test or experiment on AI, but instead provide general
+functions that may help with day-to-day research activities.
+
+The authors and contributors to this repository make no guarentee all features
+will work as intended on all devices.
+
+If you come across any bugs, or you want to make enhancements, or you want to
+contribute new tools, please feel free to open a PR. Otherwise if you have any
+issues, please raise them
+[here](https://github.com/Academic-ID/academicAI/issues).
+
 ## Tool list
 
 _The below features can be found at the notebook within the folder corresponding
@@ -26,9 +37,8 @@ to the bullet-point's number_
   them)
 - 03 **Transcribe audio:** use OpenAI's Whisper Large model to convert audio or
   video to text.
-- 04 **Miscellaneous:** General AI functions include Chat (using the OpenAI
-  Assistants API), image generation (using Dalle3) and text to voice (using
-  ElevenLabs)
+- 04 **Miscellaneous:** General AI functions including image generation (using
+  Dalle3) and text to voice (using ElevenLabs)
 
 ## Contributing
 
