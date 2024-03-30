@@ -20,11 +20,12 @@ to the bullet-point's number_
 - 01 **Summarise all (supported) files within a folder** (including within
   subdirectories), creating an excel spreadsheet within each folder detailing
   its contents. Great for summarising large volumes of documents.
-- 02 **Return relevant pages and summaries of these pages** from a folder of
-  documents (i.e. this tool finds relevant pages (from one or many documents)
-  based on a criteria you provide and summarises them)
-- 03 **Transcribe audio:** use OpenAI's Whisper Large model to convert audio to
-  text.
+- 02 **From a list of documents, find relevant pages and return summaries of
+  these pages** from a folder of documents (i.e. this tool finds relevant pages
+  (from one or many documents) based on a criteria you provide and summarises
+  them)
+- 03 **Transcribe audio:** use OpenAI's Whisper Large model to convert audio or
+  video to text.
 - 04 **Miscellaneous:** General AI functions include Chat (using the OpenAI
   Assistants API), image generation (using Dalle3) and text to voice (using
   ElevenLabs)
