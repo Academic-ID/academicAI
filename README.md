@@ -23,6 +23,14 @@ contribute new tools, please feel free to open a PR. Otherwise if you have any
 issues, please raise them
 [here](https://github.com/Academic-ID/academicAI/issues).
 
+## Responsible AI in Academia
+
+This repository contains a set of general guidelines for the use of generative
+AI in academic settings. This includes general use as part of the research
+process and in situations where the AI itself is the focus of the research.
+
+[Find the guidelines here.](https://github.com/Academic-ID/academicAI/blob/main/Responsible%20AI%20in%20Academia.md)
+
 ## Tool list
 
 _The below features can be found at the notebook within the folder corresponding
