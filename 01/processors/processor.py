@@ -139,25 +139,23 @@ async def process_directory(path, pbar, instructions='', unique_id=''):
     folder_sum = ''
 
     for dirpath, dirnames, filenames in os.walk(path, topdown=True):
-        if f'00. Folder contents {unique_id}.xlsx' in filenames:            
+        if f'00. Folder contents {unique_id}.xlsx' in filenames:
             excel_file_path = os.path.join(dirpath, f'00. Folder contents {unique_id}.xlsx')
             df = pd.read_excel(excel_file_path)
-                        
+
             file_column = df['File']
             summary_column = df['Summary']
-                    
+
             for file, summary in zip(file_column, summary_column):                
                 doc_summaries.append({"name": file, "summary": summary})
-            
-            folder_sum = await get_folder_sum(doc_summaries, dirpath.split('/')[-1], instructions)
-            continue
+                pbar.update(1)
 
-        filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$') and f != f'00. Folder contents {unique_id}.xlsx']
+        filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$') and f != f'00. Folder contents {unique_id}.xlsx' and f not in [file["name"] for file in doc_summaries]]
 
         # Process documents in the current directory
         file_tasks = [process_doc({"name": filename, "path": os.path.join(dirpath, filename), "parent": dirpath}, instructions, pbar) for filename in filenames]
         # Run tasks in parallel and wait for all to complete
-        doc_summaries = [{"name": filename, "summary": summary} for filename, summary in zip(filenames, await asyncio.gather(*file_tasks))]
+        doc_summaries.extend([{"name": filename, "summary": summary} for filename, summary in zip(filenames, await asyncio.gather(*file_tasks))])
                 
         # folders
         folder_tasks = [process_folder(path, dirpath, dirname, pbar, instructions, unique_id) for dirname in dirnames]
@@ -171,12 +169,9 @@ async def process_directory(path, pbar, instructions='', unique_id=''):
 
 def count_items(INDEX_PATH, unique_id=''):
     total_items = 0
-    for dirpath, dirnames, filenames in os.walk(INDEX_PATH):
-        if f'00. Folder contents {unique_id}.xlsx' in filenames:
-            continue
-        else:
-            # Filter out filenames by accepted filetypes
-            filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$') and f != f'00. Folder contents {unique_id}.xlsx']
-            total_items += len(filenames)
-            total_items += len(dirnames)
+    for dirpath, dirnames, filenames in os.walk(INDEX_PATH):        
+        # Filter out filenames by accepted filetypes
+        filenames = [f for f in filenames if any(f.endswith(ft) for ft in accepted_filetypes) and not f.startswith('~$') and f != f'00. Folder contents {unique_id}.xlsx']
+        total_items += len(filenames)
+        total_items += len(dirnames)
     return total_items

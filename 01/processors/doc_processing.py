@@ -106,7 +106,7 @@ async def get_summary(doc_text, doc_type, user_instruction = ''):
             'summary': {
               'type': 'string',
               'description':
-                'The summary of the document. If the text is not present or not legible, return "N/A". The summary should be detailed, but needs to be concise and use plain english. The summary should not include the document name. The summary is being used for a semantic database so maintaining the semantic meaning of the text is paramount.',
+                'The summary of the document. If the text is not present or not legible, return "N/A". The summary should be detailed, but needs to be concise and use plain english. The summary should not include the document name.',
             },
           },
           'required': ['is_text_present', 'summary'],
