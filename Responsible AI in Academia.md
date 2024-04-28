@@ -1,7 +1,8 @@
 # Responsible AI in Academia
 
-**Author:** _Kieran Lindsay_ (ORCID: 0000-0002-1624-7679) | **First published:** March 31, 2024 | **Last
-update:** April 24, 2024 _(see file history for versions)_
+**Author:** _Kieran Lindsay_ (ORCID: 0000-0002-1624-7679) | **First published:**
+March 31, 2024 | **Last update:** April 24, 2024 _(see file history for
+versions)_
 
 ---
 
@@ -127,7 +128,7 @@ be applied with a level of discretion aligning with the user's comfort with the
 technology; additional considerations should be incorporated based on the
 identified risks and the specific use case.
 
-1. **Transparency and disclosure**
+### Transparency and disclosure
 
 - Always disclose when generative AI has been used to assist with any part of
   the research process, from ideation to data analysis to writing. This should
@@ -159,7 +160,7 @@ identified risks and the specific use case.
   ChatGPT, where these parameters are not always public and are likely to change
   (e.g., in the event of AB testing by OpenAI).
 
-2. **Human oversight and editorial control**
+### Human oversight and editorial control
 
 - While AI can assist various stages of research, final decisions, analysis, and
   write-up should be human-led.
@@ -168,13 +169,13 @@ identified risks and the specific use case.
 - Maintain editorial control – a human researcher should always have the final
   say over a paper's content and conclusions.
 
-3. **Respect intellectual property**
+### Respect intellectual property
 
 - Be cautious about AI reproducing copyrighted text or images in its outputs.
 - If using AI-generated content, to the extent possible, ensure it is
   sufficiently original and distinct from its training data.
 
-4. **Consider research ethics**
+### Consider research ethics
 
 - Using AI does not circumvent standard research ethics protocols. Studies still
   require ethics approval where applicable.
@@ -184,7 +185,7 @@ identified risks and the specific use case.
   as a result of AI usage, such as bias or over-reliance by involved
   researchers.
 
-5. **Reproducibility and data availability**
+### Reproducibility and data availability
 
 - Aim to use open-source AI models where possible to aid reproducibility.
 - Share code, data and methodology to allow other researchers to verify and
@@ -195,7 +196,7 @@ identified risks and the specific use case.
   prompts, model and parameters used. As noted above, these parameters must be
   controlled and reported for research that others may want to reproduce.
 
-6. **Mitigate bias**
+### Mitigate bias
 
 - Be aware that AI models can reflect biases present in their training data,
   which may lead to biased outputs.
@@ -205,7 +206,7 @@ identified risks and the specific use case.
 - Consider the societal impact and potential for discrimination arising from the
   use of the AI model.
 
-7. **Maintain academic standards**
+### Maintain academic standards
 
 - The use of AI should not compromise the research's quality, rigour, or
   integrity.
@@ -216,7 +217,7 @@ identified risks and the specific use case.
 
 ## Guidelines for Scientific Testing of AI Capabilities
 
-1. **Compare to human baselines**
+### Compare to human baselines
 
 - When evaluating an AI's capabilities, compare its performance to human
   benchmarks on the same task.
@@ -225,7 +226,7 @@ identified risks and the specific use case.
 - Report the performance of both AI and human baselines using the same metrics
   to allow direct comparison.
 
-2. **Test for robustness & reliability**
+### Test for robustness & reliability
 
 - Evaluate how robust the AI is to changes in input format, wording of
   instructions, or domain of application.
@@ -246,7 +247,7 @@ identified risks and the specific use case.
 - Ask the model to assess its confidence in its conclusions where relevant –
   make sure to review lower-confidence responses.
 
-3. **Interrogate decision-making processes**
+### Interrogate decision-making processes
 
 - Probe how the AI arrives at its outputs - look inside the black box as much as
   possible.
@@ -262,7 +263,7 @@ identified risks and the specific use case.
 - Pay close attention and interrogate output relating to niche topics. Check for
   accuracy and try to determine the source of obscure information returned.
 
-4. **Acknowledge limitations**
+### Acknowledge limitations
 
 - Be clear about the constraints of the testing conditions and domains of
   applicability.
@@ -272,7 +273,7 @@ identified risks and the specific use case.
 - Acknowledge that results may not generalise to other models, versions, or
   parameter settings.
 
-5. **Foster open science**
+### Foster open science
 
 - Where safe, publish all code, data and models to enable replication and
   further research.
@@ -282,7 +283,7 @@ identified risks and the specific use case.
 - Engage in open debate about the interpretation of results and their real-world
   implications.
 
-6. **Examine social and ethical implications**
+### Examine social and ethical implications
 
 - Consider the potential societal impacts, both positive and negative, of the AI
   capabilities being developed and tested.
@@ -372,7 +373,7 @@ qualitative research methodologies.
 
 ## Responsible Publication and Dissemination
 
-1. **Consider dual use**
+### Consider dual use
 
 - Be mindful that research intended for beneficial purposes may be misused or
   have unintended negative consequences.
@@ -380,7 +381,7 @@ qualitative research methodologies.
 - If necessary, limit the release of code, data or models that could be easily
   abused.
 
-2. **Engage in public dialogue**
+### Engage in public dialogue
 
 - Communicate research findings clearly and accessibly to non-expert audiences.
 - Be proactive in engaging with the media, policymakers and the public about the
@@ -389,7 +390,7 @@ qualitative research methodologies.
 - Participate in multidisciplinary discussions about the responsible development
   of AI.
 
-3. **Continuously update practices**
+### Continuously update practices
 
 - Keep up-to-date with the latest research and evolving best practices for
   responsible AI development.
