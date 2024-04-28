@@ -1,6 +1,6 @@
 # Responsible AI in Academia
 
-**Author:** _Kieran Lindsay_ | **First published:** March 31, 2024 | **Last
+**Author:** _Kieran Lindsay_ (ORCID: 0000-0002-1624-7679) | **First published:** March 31, 2024 | **Last
 update:** April 24, 2024 _(see file history for versions)_
 
 ---
