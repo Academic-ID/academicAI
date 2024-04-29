@@ -1,8 +1,13 @@
 # Responsible AI in Academia
 
 **Author:** _Kieran Lindsay_ (ORCID: 0000-0002-1624-7679) | **First published:**
-March 31, 2024 | **Last update:** April 24, 2024 _(see file history for
+March 31, 2024 | **Last update:** April 29, 2024 _(see file history for
 versions)_
+
+_This is a living document. It is open source, and anyone is welcome to make
+suggestions. You can find the source and document history
+[here](https://github.com/Academic-ID/academicAI) or reach out to Kieran at
+kieran@academicid.net_
 
 ---
 
@@ -33,13 +38,13 @@ guidelines.
 
 ## Risks of Generative AI
 
-Addressing the risks associated with generative AI use necessitates awareness.
-Fostering a culture of critical engagement with generative AI tools is the best
-tool to help mitigate the risks.
+Addressing the risks associated with generative AI use requires awareness.
+Fostering a culture of critical engagement with generative AI is the best method
+to help mitigate the risks.
 
 The use of generative AI – either as part of day-to-day activities, or within a
 specific research methodology, or as the object of research – introduces a range
-of risks that require consideration. A selection of the most pertinent risks are
+of risks that require consideration. A selection of the most obvious risks are
 highlighted below. Users of generative AI should undertake further research into
 the risks for specific use cases, especially when using generative AI as part of
 a research methodology.
