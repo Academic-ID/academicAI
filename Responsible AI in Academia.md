@@ -11,25 +11,25 @@ kieran@academicid.net_
 
 ---
 
-Below are some preliminary guidance principles that academics, researchers and
-students can follow when using generative AI to assist with their research or in
+It is an exciting time for AI research and the use of AI in research. Below are
+some preliminary guidance principles that academics, researchers and students
+can follow when using generative AI to assist with their research or in
 situations where generative AI forms the subject of their research.
 
-The use of generative AI in research is not inherently bad practice. In fact, it
-has the potential to accelerate and enrich many aspects of the research process,
-from hypothesis generation to data analysis to dissemination. However, to ensure
-the reproducibility and integrity of research that involves or utilises
-generative AI, it is vital to be transparent about its use.
+The use of generative AI in research has the potential to accelerate and enrich
+many aspects of the research process, from hypothesis generation to data
+analysis to dissemination. However, to ensure the reproducibility and integrity
+of research that involves or utilises generative AI, it is vital to be
+transparent about its use.
 
-We are still learning about the impact of these different technologies and the
-vast configuration options already available to users. As such, it is essential
-that users of this technology are transparent and specific about the use of
-generative AI.
+We are still learning about the impact of this technology and we are faced with
+an ever growing array of models all with variable usage parameters. As such, it
+is essential that users of generative AI are transparent and specific about its
+use.
 
 Including details on AI use and specific details on models and parameters
 utilised will help the community build a clearer picture of AI capabilities and
-move the field forward. It is an exciting time for AI research and the use of AI
-in research.
+move the field forward.
 
 These guidelines are preliminary and are being incrementally expanded and
 improved. As such, these should not be relied on solely but used in conjunction
