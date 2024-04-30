@@ -23,7 +23,7 @@ of research that involves or utilises generative AI, it is vital to be
 transparent about its use.
 
 We are still learning about the impact of this technology and we are faced with
-an ever growing array of models all with variable usage parameters. As such, it
+an ever growing array of models, all with variable usage parameters. As such, it
 is essential that users of generative AI are transparent and specific about its
 use.
 
