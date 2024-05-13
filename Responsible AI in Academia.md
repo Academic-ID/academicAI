@@ -1,7 +1,7 @@
 # Responsible AI in Academia
 
 **Author:** _Kieran Lindsay_ (ORCID: 0000-0002-1624-7679) | **First published:**
-March 31, 2024 | **Last update:** May 12, 2024 _(see file history for
+March 31, 2024 | **Last update:** May 13, 2024 _(see file history for
 versions)_
 
 _This is a living document. It is open source, and anyone is welcome to make
@@ -98,7 +98,7 @@ a research methodology.
 4. **Intellectual Property and Plagiarism:** Generative AI's capacity to produce
    content that closely mimics existing copyrighted material raises concerns
    about unintentional plagiarism and the violation of intellectual property
-   rights. While legally, this remains a grey area; the concern remains particularly problematic in academic settings where the originality of research outputs is paramount.
+   rights. While this remains a legal grey area, the concern remains particularly problematic in academic settings where the originality of research outputs and the proper attribution of knowledge are paramount.
 
 ### Operational Risks
 
@@ -107,7 +107,7 @@ a research methodology.
    reproducibility of research findings. This variability, coupled with the
    'black box' nature of many AI systems, can make it difficult to understand
    and explain how specific results were generated, undermining research's
-   reproducibility, credibility and integrity. For instance, two researchers using the same generative model but with slightly different temperature parameters will likely get divergent results, making it impossible to replicate findings.
+   reproducibility, credibility and integrity. For instance, two researchers using the same generative model but with slightly different parameters will likely get divergent results, making it impossible to replicate findings.
 
 2. **Overreliance and Skill Degradation:** The convenience and efficiency of
    generative AI tools can lead to an overreliance on automated systems,
@@ -117,9 +117,9 @@ a research methodology.
    without sufficient scrutiny, increasing the risk of propagating errors or
    flawed analyses.
 
-3. **Writing Style and Quality** This risk of overreliance extends to the use of generative AI for writing published academic material. Whilst anecdotal, most proficient in English will readily question text that uses overly verbose, archaic or unneedingly positive language. In addition to the style models are trained to mimic, most generative AI models have some form of frequency/presence penalty parameter that discourages the repeated use of the same tokens within close proximity. While this helps prevent the model from outputting repeated phrases and words, it can result in an expanded vocabulary that is not always warranted. While the impact on style, readability and substance is obvious, these may be forgiven, to an extent, for the time-saving benefit. However, when content is purported to be human-written, drops in quality *may* result in a feedback loop amplifying these deficiencies as models are retrained on this "human-generated" content.
+3. **Writing Style and Quality** This risk of overreliance extends to the use of generative AI for writing published academic material. Whilst anecdotal, most proficient in English will readily question text that uses overly verbose, archaic or unneedingly positive language. In addition to the positive style that models are trained to mimic, most generative AI systems have some form of frequency/presence penalty parameter that discourages the repeated use of the same tokens within close proximity. While this helps prevent the model from getting stuck in loops outputting repeated phrases and words, it can result in an expanded vocabulary that is not always warranted. While the impact on style, readability and substance is obvious, these may be forgiven, to an extent, for the time-saving benefit. However, when content is purported to be human-written, drops in quality *[may](https://arxiv.org/pdf/2404.01413)* result in a feedback loop amplifying these deficiencies as models are retrained on this "human-generated" content.
 
-4. **Regulatory and Legal Risks:** The rapid improvement in capabilities of generative AI and its applications significantly outpace existing legal and regulatory frameworks, leading to uncertainties and potential non-compliance. Further, and more generally, while it may be tempting to copy any and all data into ChatGPT to have it summarised, sending this data to a third-party company (potentially out of your jurisdiction) may be a breach of contract or privacy-focused legislation. With the massive amount of computing resources required to power AI models, without specific assurances as to where data is processed when sending data to an AI model, it may be processed in multiple jurisdictions that you are unaware of, potentially breaching data sovereignty laws.
+4. **Regulatory and Legal Risks:** The rapid improvement in capabilities of generative AI and its applications significantly outpace existing legal and regulatory frameworks, leading to uncertainties and potential non-compliance. Further, and more generally, while it may be tempting to copy any and all data into ChatGPT to have it summarised, sending this data to a third-party company (potentially out of your jurisdiction) may be a breach of contract or privacy-focused legislation. With the massive amount of computing resources required to power AI models, without specific assurances as to where data is processed by an AI model, it may be sent to multiple jurisdictions that you are unaware of, potentially breaching data sovereignty laws.
 
 ## Guidelines for Using Generative AI to Assist Academic Research
 
@@ -129,17 +129,16 @@ manner consistent with ethical and legal obligations is not complicated;
 however, it does require some thought. Below are some guidelines for best
 practices that will serve as a starting point for the ethical and responsible
 use of AI in academic settings. These guidelines are not exhaustive and should
-be applied with a level of discretion aligning with the user's comfort and familiarity with the technology; additional considerations should be incorporated based on the
-identified risks and the specific use case.
+be applied with a level of discretion aligning with the user's comfort and familiarity with the technology; additional considerations should be incorporated based on the identified risks and the specific use case.
 
 It can be hard to determine the best practices for using generative AI in academic research, as the technology is still evolving. This is more challenging for those without a technical background, as the technology is often opaque and difficult to understand. The best way to overcome this is to use the technology frequently and in lower-stakes situations. The more you use the technology, the greater your intuitive understanding of its strengths and weaknesses will be. This will allow you to understand better the technology and its limitations and, thus, the risks it may present in your research.
 
-It should also be identified that general consumer-facing generative AI services, such as the ChatGPT user web interface, may not be suitable in situations where generative AI forms part of a research methodology and needs to be reproduced. These services are subject to change, and the parameters used to generate responses are not always public. As such, it is recommended that programmatic solutions or customisable playgrounds be used where possible. This will allow for the control and reporting of parameters used in the research, which is essential for research that others may want to reproduce. However, with the risks noted above in mind, these services are likely suitable for exploratory research when testing generative AI or just day-to-day use of the tool.
+It should also be noted up front that general consumer-facing generative AI services, such as the ChatGPT, Gemini or Claude user interfaces, may not be suitable in situations where generative AI forms part of a research methodology and needs to be reproduced. These services are subject to change, and the parameters used to generate responses are not always public. As such, it is recommended that programmatic solutions or customisable playgrounds be used where possible. You can usually find these playgrounds by signing up for developer accounts or searching something along the lines of 'OpenAI API playground'. This will allow for the control and reporting of parameters used in the research, which is essential for any research that others may want to reproduce. However, with the risks noted above in mind, consumer-facing services are likely suitable for exploratory research when testing generative AI or just day-to-day use of the tool.
 
 ### Transparency and disclosure
 
 - Always disclose when generative AI has been used to assist with any part of
-  the research process, from ideation to data analysis to writing. This should be noted in the methodology section or code made available through a transparent, public repository like GitHub. Where reproducibility of research is essential, it is vital to use and note a specific model version and parameters used. For example, instead of just using the `gpt-4-turbo` model, which points to whatever the most recent model is, specify the exact model version used, such as `gpt-4-turbo-2024-04-09`. This will allow for the reproduction of the research and ensure that the model used is consistent across all research outputs.
+  the research process, from ideation to data analysis to writing. This should be noted in the methodology section or code made available through a transparent, public repository like GitHub. Where reproducibility of research is essential, it is vital to use and note a specific model version. For example, instead of just using the `gpt-4-turbo` model, which points to whatever the most recent model version is, specify the exact version used, such as `gpt-4-turbo-2024-04-09`. This will allow for the reproduction of the research and ensure that the model used is consistent across all research outputs. Similarly, most models have a wide range of customisable parameters that influence model behaviour, even if these are not altered from the default, they should be clearly noted.
 
   Being aware of these parameters should be a minimum requirement for
   any use of generative AI as part of a research methodology or when testing
@@ -148,7 +147,7 @@ It should also be identified that general consumer-facing generative AI services
   ChatGPT, where these parameters are not always public and are likely to change
   (e.g., in the event of model upgrades or AB testing by OpenAI).
 
-  A full list of accessible model parameters and potentially time-specific information returned from API use (e.g. `system_fingerprint`) by different models can usually be found on their API documents page. For example, OpenAI's API documentation can be found [here](https://platform.openai.com/docs/api-reference/chat/create).
+  A full list of accessible model parameters and potentially time-specific information returned from API use by different models can usually be found on their API documents page. For example, OpenAI's API documentation can be found [here](https://platform.openai.com/docs/api-reference/chat/create).
 
   For example, one may report on the use of generative AI in the following manner:
 
@@ -188,7 +187,7 @@ It should also be identified that general consumer-facing generative AI services
 ### Respect intellectual property
 
 - Be vigilant about AI reproducing copyrighted text or images in its outputs. AI models cannot be relied on to provide references. The scenarios where AI-generated content should be added to a body of text without the author having already found and reviewed relevant sources are limited. Proper attribution should always be given to the original creators of any content used in research. If using generative AI to speed up the writing process or paraphrase text, ensure that the AI-generated content is sufficiently original and distinct and that proper attribution to the ideas in the text is made.
-- It should always be remembered that AI systems are trained on existing content. While this does not mean that they cannot produce predicted text that is unique or makes novel connections between ideas, it does mean, at its core - and just like human research, the AI system is using previous knowledge to generate new knowledge. Unfortunately, AI systems do not have an awareness or catalogue of their training data in the sense that if prompted as to the source or inspiration for generated content, the AI system cannot accurately reproduce the piece or pieces of training data it was drawing from. Unless the concept is well known and secondary sources in the training data referring to the origin of the concept exist, it is in these scenarios that AI systems are most likely to hallucinate a source. For example, an AI system will likely know the origin of highly cited experiments due to other training material making the connection between the experiment, the outcomes and the authors; however, for more obscure or recent knowledge, an AI system is more likely to hallucinate a source.
+- It should always be remembered that AI systems are trained on existing content. While this does not mean that they cannot produce predicted text that is unique or makes novel connections between ideas, it does mean, at its core - and just like human research, the AI system is using previous knowledge to generate new knowledge. Unfortunately, AI systems do not have an awareness or catalogue of their training data in the sense that if prompted as to the source or inspiration for generated content, the AI system cannot accurately reproduce the piece or pieces of training data it was drawing from. Unless the concept is well known and secondary sources in the training data referring to the origin of the concept exist, AI systems are more likely to hallucinate a source. For example, an AI system will likely know the origin of highly cited experiments due to other training material making the connection between the experiment, the outcomes and the authors; however, for more obscure or recent knowledge, an AI system is more likely to hallucinate a source.
 
 ### Consider research ethics
 
