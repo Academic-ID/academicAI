@@ -207,19 +207,19 @@ It should also be noted up front that general consumer-facing generative AI serv
 
 ### Reproducibility and data availability
 
-- Aim to use open-source AI models where possible to aid reproducibility. Proprietary models can be significantly more expensive, and the black-box nature of these models means that the parameters used in the research may not be public. This can make reproducing the research difficult.
+- Aim to use open-source AI models where possible to aid reproducibility. Proprietary models can be significantly more expensive, and the black-box nature of these models means that the parameters used in the research may not be public.
 - Always ensure that the parameters noted in the `Transparency and disclosure` section above are reported.
 - Share code, data and methodology to allow other researchers to verify and build upon the work. This can be done by uploading the AI model, code used, parameters, and input data to a repository like GitHub or Huggingface. These platforms provide version control and long-term archiving, making it easier for other researchers to access and use the materials.
 - Consider using standardised formats and protocols for sharing AI models and data to promote interoperability and make it easier for other researchers to use and integrate the materials into their own work.
 - Provide clear documentation and instructions for using the shared materials, including any dependencies, hardware requirements, or potential limitations.
-- Archive versioned copies of AI models or datasets used, as these can change over time. This is particularly important for research relying on rapidly evolving AI technologies, where models and datasets may be updated or replaced frequently.
+- Archive versioned copies of AI models or datasets used, as these can change over time.
 
 ### Mitigate bias
 
 - Be aware that AI models can reflect [biases present in their training data](https://dl.acm.org/doi/10.1145/3597307),
   which may lead to biased outputs.
 - Actively seek out and use diverse datasets for training and testing AI models to ensure they are exposed to a wide range of perspectives, experiences, and demographics.
-- Engage with stakeholders and domain experts from different backgrounds to gain insights into potential sources of bias and validate AI model outputs' fairness.
+- Engage with stakeholders and domain experts from different backgrounds to gain insights into potential sources of bias and validate an AI model outputs' fairness.
 - Take steps to identify and mitigate potential biases, such as testing the model on diverse datasets and examining outputs for stereotyping or unequal treatment. Run controlled tests before utilising a specific model to see if an AI model generates different results for different demographic groups.
 - When possible, develop and apply quantitative metrics for measuring bias in AI models, such as demographic parity, equalised odds, or disparate impact.
 - Always document and report any identified biases or limitations in the AI model and the steps taken to address them.
@@ -259,7 +259,7 @@ It should also be noted up front that general consumer-facing generative AI serv
   inputs and parameter settings.
 - Investigate whether the model exhibits inconsistencies or contradictions in
   its outputs. Design tests that probe for logical inconsistencies, such as asking the AI to reason about equivalent problems framed in different ways.
-- Ask the model to assess its confidence in its conclusions where relevant. Treat the AI's confidence scores as a valuable source of information, but critically examine the reasons behind its uncertainty.
+- Ask the model to assess its confidence in its conclusions where relevant.
 
 ### Interrogate decision-making processes
 
@@ -270,7 +270,7 @@ It should also be noted up front that general consumer-facing generative AI serv
 - Examine attention weights, activations, and embeddings to gain insight into
   the model's inner workings.
 - Conduct controlled experiments that systematically manipulate the input prompts to test the stability and consistency of the AI's reasoning.
-- The existence of questions or other content within the model's training data will skew results. As such, it is better to develop original and unbiased test cases that are not likely to be present in the AI's training data to get a more accurate assessment of its actual capabilities.
+- The existence of questions or other content within the model's training data will skew results. As such, it is better to develop original and unbiased test cases that are not likely present in the AI's training data to get a more accurate assessment of its actual capabilities.
 - Be especially vigilant when the AI generates information about specialised or esoteric domains, as it may be more prone to hallucination or inaccuracy in these areas. Check for
   accuracy and try to determine the source of obscure information returned.
 
@@ -280,14 +280,11 @@ It should also be noted up front that general consumer-facing generative AI serv
   applicability. Explicitly state any assumptions, limitations, or biases in the testing methodology or data that could affect the generalisability of the results.
 - Highlight uncertainties and aspects of the model that are not well understood. Be transparent about any knowledge gaps or open questions regarding the AI's behaviour or capabilities.
 - Frame findings as provisional hypotheses rather than definitive conclusions
-  about AI capabilities in general. Use cautious and qualified language when interpreting the results, acknowledging that they are specific to the particular AI system and testing conditions.
-- Acknowledge that results may not generalise to other models, versions, or
-  parameter settings.
+  about AI capabilities in general. Use cautious and qualified language when interpreting the results, acknowledging that they are specific to the particular AI system and that results may not generalise to other models, versions, or parameter settings.
 
 ### Foster open science
 
-- Where safe, publish all code, data and models to enable replication and
-  further research.
+- Where safe, publish all code, data and models to enable replication and further research.
 - Provide complete and detailed documentation of the AI system and testing methodology to support the reproducibility and comparability of the results.
 - Engage in open peer review and solicit feedback from diverse perspectives to identify blind spots and improve the rigour of the research.
 - Participate in public discourse and multidisciplinary dialogues to collectively make sense of the findings and their potential societal consequences.
