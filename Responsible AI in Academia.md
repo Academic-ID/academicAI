@@ -213,6 +213,7 @@ It should also be noted up front that general consumer-facing generative AI serv
 - Consider using standardised formats and protocols for sharing AI models and data to promote interoperability and make it easier for other researchers to use and integrate the materials into their own work.
 - Provide clear documentation and instructions for using the shared materials, including any dependencies, hardware requirements, or potential limitations.
 - Archive versioned copies of AI models or datasets used, as these can change over time.
+- Use parameters in a way that reduces randomness as much as possible. For example, setting the temperature parameter to 0 will result in far more deterministic and reproducible outputs. Always explain why specific parameters were set the way they were if departing from this rule of thumb.
 
 ### Mitigate bias
 
